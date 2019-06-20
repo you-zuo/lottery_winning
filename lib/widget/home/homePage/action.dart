@@ -9,6 +9,7 @@ class HomeActionCreator {
   }
 
   static Action onHomeDetailsPage(String item) {
-    return  Action(HomeAction.onHomeDetailsPage,payload: item);
+    Map<String, dynamic> payload = {"title": item};
+    return  Action(HomeAction.onHomeDetailsPage,payload: payload);
   }
 }

@@ -13,6 +13,6 @@ class HomeDetailsState implements Cloneable<HomeDetailsState> {
 
 HomeDetailsState initState(Map<String, dynamic> args) {
 final HomeDetailsState state=HomeDetailsState();
-  state.title='111';
+    state.title = args["title"];
   return state;
 }

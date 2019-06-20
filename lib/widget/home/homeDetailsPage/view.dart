@@ -6,5 +6,5 @@ import 'state.dart';
 
 Widget buildView(
     HomeDetailsState state, Dispatch dispatch, ViewService viewService) {
-  return BaseAppBarNolife(state.title, Container());
+  return BaseAppBarNolife(state.title!=null?state.title:"", Container());
 }

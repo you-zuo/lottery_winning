@@ -15,6 +15,9 @@ Effect<HomeState> buildEffect() {
 void _onAction(Action action, Context<HomeState> ctx) {}
 
 void _onHomeDetailsPage(Action action, Context<HomeState> ctx) {
-  Navigator.pushNamed(ctx.context, "/homeDetailsPage",
-      arguments: {"title": action.payload.toString()});
+  Navigator.of(ctx.context).push(
+    MaterialPageRoute(
+      builder: (context) => HomeDetailsPage().buildPage(action.payload),
+    ),
+  );
 }

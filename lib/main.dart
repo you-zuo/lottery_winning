@@ -22,6 +22,5 @@ void main() {
     SystemUiOverlayStyle systemUiOverlayStyle =
         SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-    PrintUtil.print("我执行了");
   }
 }

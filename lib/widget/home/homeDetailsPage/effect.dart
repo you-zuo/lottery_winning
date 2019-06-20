@@ -11,8 +11,7 @@ Effect<HomeDetailsState> buildEffect() {
 }
 
 void _init(Action action, Context<HomeDetailsState> ctx) {
-  PrintUtil.print(action.payload);
-  ctx.dispatch(HomeDetailsActionCreator.fetch(ctx.state.title));
+
 }
 
 void _fetch(Action action, Context<HomeDetailsState> ctx) {

@@ -14,8 +14,6 @@ final routes = {
   '/msgPage': (context) => msgPage().buildPage(null),
   '/settingPage': (context) => settingPage().buildPage(null),
   '/personalDataPage': (context) => personalDataPage().buildPage(null),
-  '/homeDetailsPage': (context, {arguments}) =>
-      HomeDetailsPage().buildPage(arguments),
 };
 
 // ignore: strong_mode_top_level_function_literal_block
