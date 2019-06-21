@@ -8,11 +8,12 @@ class HttpUtils {
     try {
       response = await Dio().get(url);
       onCallBack(response.toString());
+     // PrintUtil.print("get请求成功：${response.toString()}");
     } on DioError catch (e) {
       if (CancelToken.isCancel(e)) {
-        print("get请求取消：" + e.message);
+        PrintUtil.print("get请求取消：" + e.message);
       }
-      print("get请求发生错误：$e");
+      PrintUtil.print("get请求发生错误：$e");
     }
   }
 
@@ -22,11 +23,13 @@ class HttpUtils {
     try {
       response = await Dio().post(url, data: data);
       onCallBack(response.toString());
+     // PrintUtil.print("post请求成功：${response.toString()}");
+
     } on DioError catch (e) {
       if (CancelToken.isCancel(e)) {
-        print("get请求取消：" + e.message);
+        PrintUtil.print("get请求取消：" + e.message);
       }
-      print("get请求发生错误：$e");
+      PrintUtil.print("get请求发生错误：$e");
     }
   }
 }

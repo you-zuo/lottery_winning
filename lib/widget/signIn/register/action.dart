@@ -4,8 +4,16 @@ import 'package:fish_redux/fish_redux.dart';
 enum registerAction { action,goBack }
 
 class registerActionCreator {
-  static Action onAction() {
-    return const Action(registerAction.action);
+  static Action onAction(userName,passWord,passWords,phone,email,qq) {
+    Map<String, dynamic> payload = {
+      "userName": userName,
+      "passWord": passWord,
+      "passWords": passWords,
+      "phone": phone,
+      "email": email,
+      "qq": qq,
+    };
+    return  Action(registerAction.action,payload: payload);
   }
   static Action onGoBack() {
     return const Action(registerAction.goBack);

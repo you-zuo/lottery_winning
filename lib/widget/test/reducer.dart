@@ -15,7 +15,6 @@ Reducer<testState> buildReducer() {
 }
 
 testState _onAction(testState state, Action action) {
-  print("我是值更新的地方");
   final testState newState = state.clone();
   newState.userList = action.payload;
   return newState;

@@ -10,7 +10,9 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
       ScreenUtil(width: 375, height: 667, allowFontScaling: false)
         ..init(viewService.context);
 
+  //用户名控制器
   TextEditingController _textEditingController = TextEditingController();
+  //密码控制器
   TextEditingController _textEditingControllers = TextEditingController();
 
   return BaseAppBarNolife(
@@ -93,7 +95,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
             child: FlatButton(
               color: Color(AppColors.loginButton),
               onPressed: () {
-                dispatch(loginActionCreator.onTapScreenPage());
+                dispatch(loginActionCreator.onTapScreenPage(_textEditingController.text,_textEditingControllers.text));
               },
               child: Text(
                 S.of(viewService.context).login,

@@ -6,11 +6,21 @@ import 'state.dart';
 
 Widget buildView(
     registerState state, Dispatch dispatch, ViewService viewService) {
+  //账号控制器
   TextEditingController _userNameController = TextEditingController();
+  //密码控制器
   TextEditingController _passWordController = TextEditingController();
+
+  //重复密码控制器
   TextEditingController _passWordControllers = TextEditingController();
+
+  //手机号码控制器
   TextEditingController _phoneController = TextEditingController();
+
+  //邮箱控制器
   TextEditingController _emailController = TextEditingController();
+
+  //qq控制器
   TextEditingController _qqController = TextEditingController();
 
   return BaseAppBarNolife(
@@ -215,7 +225,17 @@ Widget buildView(
               vertical: ScreenUtil.getInstance().setWidth(10)),
           child: FlatButton(
             color: Color(AppColors.loginButton),
-            onPressed: () {},
+            onPressed: () {
+              dispatch(
+                registerActionCreator.onAction(
+                    _userNameController.text,
+                    _passWordController.text,
+                    _passWordControllers.text,
+                    _phoneController.text,
+                    _emailController.text,
+                    _qqController.text),
+              );
+            },
             child: Text(
               S.of(viewService.context).register,
               style: Appstyle.witTextStyle,

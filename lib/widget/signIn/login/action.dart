@@ -8,8 +8,12 @@ class loginActionCreator {
     return const Action(loginAction.action);
   }
 
-  static Action onTapScreenPage() {
-    return const Action(loginAction.tapScreenPage);
+  static Action onTapScreenPage(accountNumber,passWord) {
+    Map<String, dynamic> payload = {
+      "accountNumber": accountNumber,
+      "passWord": passWord
+    };
+    return Action(loginAction.tapScreenPage,payload:payload);
   }
 
   //跳转到注册页面

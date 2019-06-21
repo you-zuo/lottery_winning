@@ -17,20 +17,24 @@ Effect<loginState> buildEffect() {
 void _onAction(Action action, Context<loginState> ctx) {}
 
 void _tapScreenPage(Action action, Context<loginState> ctx) {
-  Navigator.pushNamedAndRemoveUntil(
-      ctx.context, "/screenPage", (routes) => false);
+  PrintUtil.print(action.payload);
+  // Navigator.pushNamedAndRemoveUntil(
+  //   ctx.context, "/screenPage", (routes) => false);
 }
 
 //跳转注册页面
 void _tapRegister(Action action, Context<loginState> ctx) {
-   Navigator.pushNamed(ctx.context, '/register');
-  //Navigator.push(ctx.context, MaterialPageRoute(builder: (context) =>testPage().buildPage(null)),);
+  Navigator.pushNamed(ctx.context, '/register');
+//  Navigator.push(
+//    ctx.context,
+//    MaterialPageRoute(builder: (context) => testPage().buildPage(null)),
+//  );
 }
 
 void _authToSina(Action action, Context<loginState> ctx) {
   ShareSDK.getUserInfo(
     ShareSDKPlatforms.qq,
-        (SSDKResponseState state, Map userdata, SSDKError error) {
+    (SSDKResponseState state, Map userdata, SSDKError error) {
       showAlert(state, error.rawData, ctx.context);
     },
   );
