@@ -13,17 +13,29 @@ Effect<registerState> buildEffect() {
 }
 
 void _onAction(Action action, Context<registerState> ctx) {
-  PrintUtil.print(action.payload);
-  //BaseToast(action.payload.toString()).tost();
-  Fluttertoast.showToast(
-      msg: "aaa",
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
-      timeInSecForIos: 1,
-      backgroundColor: Colors.red,
-      textColor: Colors.white,
-      fontSize: 16.0
-  );
+  var value = action.payload;
+  if (value["userName"].length == 0) {
+    BaseToast("请输入用户名").tost();
+  } else if (value["passWord"].length == 0) {
+    BaseToast("请输入密码").tost();
+  } else if (value["passWords"].length == 0) {
+    BaseToast("请再输入密码").tost();
+  } else if (value["passWord"] != value["passWords"]) {
+    BaseToast("两次输入的密码不同，请重新输入！").tost();
+  } else if (value["phone"].length == 0) {
+    BaseToast("请输入电话号码").tost();
+  } else if (value["email"].length == 0) {
+    BaseToast("请输入邮箱").tost();
+  } else if (value["qq"].length == 0) {
+    BaseToast("请输入QQ").tost();
+  } else {
+    printUtil.print(value);
+  }
+
+  // if (value["userName"].length == 0 || value["passWord"].length == 0) {
+  //   PrintUtil.print("1111");
+  // }
+  //
 }
 
 //回到登录页面

@@ -11,9 +11,9 @@ class HttpUtils {
      // PrintUtil.print("get请求成功：${response.toString()}");
     } on DioError catch (e) {
       if (CancelToken.isCancel(e)) {
-        PrintUtil.print("get请求取消：" + e.message);
+        printUtil.print("get请求取消：" + e.message);
       }
-      PrintUtil.print("get请求发生错误：$e");
+      printUtil.print("get请求发生错误：$e");
     }
   }
 
@@ -27,9 +27,9 @@ class HttpUtils {
 
     } on DioError catch (e) {
       if (CancelToken.isCancel(e)) {
-        PrintUtil.print("get请求取消：" + e.message);
+        printUtil.print("get请求取消：" + e.message);
       }
-      PrintUtil.print("get请求发生错误：$e");
+      printUtil.print("get请求发生错误：$e");
     }
   }
 }

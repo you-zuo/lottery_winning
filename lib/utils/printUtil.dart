@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import 'datetimeUtil.dart';
 
-class PrintUtil {
+class printUtil {
   /// 通用打印方法，Release 不会打印，超长字符串分段打印
   static print(dynamic message) {
     if (message != null) {

@@ -17,7 +17,7 @@ Effect<loginState> buildEffect() {
 void _onAction(Action action, Context<loginState> ctx) {}
 
 void _tapScreenPage(Action action, Context<loginState> ctx) {
-  PrintUtil.print(action.payload);
+  printUtil.print(action.payload);
   // Navigator.pushNamedAndRemoveUntil(
   //   ctx.context, "/screenPage", (routes) => false);
 }

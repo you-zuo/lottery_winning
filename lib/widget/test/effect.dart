@@ -18,7 +18,7 @@ void _onAction(Action action, Context<testState> ctx) {
   HttpUtils.getHttp(
     url: "http://h.playdota.cc/api/Topic/get_topic_list",
     onCallBack: (v) {
-      PrintUtil.print(v);
+      printUtil.print(v);
       List<HomeBeanDataData> data = HomeBeanEntity.fromJson(
         jsonDecode(v),
       ).data.data;
