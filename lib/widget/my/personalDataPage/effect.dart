@@ -20,11 +20,9 @@ void _onLogOut(Action action, Context<personalDataState> ctx) {
 
 //上传头像
 void _onImage(Action action, Context<personalDataState> ctx) {
-  getImage();
-}
-//图片选择器
-getImage() async {
-  var image = await ImagePicker.pickImage(
-      source: ImageSource.gallery, maxHeight: 2000, maxWidth: 2000);
-  printUtil.print(image);
+  PickerImage().getImage(
+    onCallBack: (v) {
+      printUtil.print(v);
+    },
+  );
 }
