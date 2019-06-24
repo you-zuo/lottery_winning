@@ -18,8 +18,8 @@ void _onAction(Action action, Context<loginState> ctx) {}
 
 void _tapScreenPage(Action action, Context<loginState> ctx) {
   printUtil.print(action.payload);
-  // Navigator.pushNamedAndRemoveUntil(
-  //   ctx.context, "/screenPage", (routes) => false);
+   Navigator.pushNamedAndRemoveUntil(
+     ctx.context, "/screenPage", (routes) => false);  
 }
 
 //跳转注册页面

@@ -4,7 +4,8 @@ import 'package:lottery_winning/export.dart';
 import 'action.dart';
 import 'state.dart';
 
-Widget buildView(personalDataState state, Dispatch dispatch, ViewService viewService) {
+Widget buildView(
+    personalDataState state, Dispatch dispatch, ViewService viewService) {
   return BaseAppBarNolife(
     "个人资料",
     Container(
@@ -28,9 +29,9 @@ Widget buildView(personalDataState state, Dispatch dispatch, ViewService viewSer
               children: <Widget>[
                 Expanded(
                     child: Text(
-                      "头像",
-                      style: Appstyle.BlackGrey14,
-                    )),
+                  "头像",
+                  style: Appstyle.BlackGrey14,
+                )),
                 ExtendedImage.asset(
                   "assets/images/Dice1.png",
                   width: ScreenUtil.getInstance().setWidth(59),
@@ -111,10 +112,13 @@ Widget buildView(personalDataState state, Dispatch dispatch, ViewService viewSer
                     children: <Widget>[
                       Expanded(
                           child: Text(
-                            "手机号码",
-                            style: Appstyle.BlackGrey14,
-                          )),
-                      Text("15181854324",style: Appstyle.grayColor14,),
+                        "手机号码",
+                        style: Appstyle.BlackGrey14,
+                      )),
+                      Text(
+                        "15181854324",
+                        style: Appstyle.grayColor14,
+                      ),
                       SizedBox(
                         width: ScreenUtil.getInstance().setWidth(10),
                       ),
@@ -142,9 +146,9 @@ Widget buildView(personalDataState state, Dispatch dispatch, ViewService viewSer
                     children: <Widget>[
                       Expanded(
                           child: Text(
-                            "电子邮箱",
-                            style: Appstyle.BlackGrey14,
-                          )),
+                        "电子邮箱",
+                        style: Appstyle.BlackGrey14,
+                      )),
                       Image.asset("assets/images/r.png")
                     ],
                   ),
@@ -169,9 +173,9 @@ Widget buildView(personalDataState state, Dispatch dispatch, ViewService viewSer
                     children: <Widget>[
                       Expanded(
                           child: Text(
-                            "修改密码",
-                            style: Appstyle.BlackGrey14,
-                          )),
+                        "修改密码",
+                        style: Appstyle.BlackGrey14,
+                      )),
                       Image.asset("assets/images/r.png")
                     ],
                   ),
@@ -230,18 +234,23 @@ Widget buildView(personalDataState state, Dispatch dispatch, ViewService viewSer
             height: ScreenUtil.getInstance().setWidth(25),
           ),
           //退出登录
-          Container(
-            color: Colors.white,
-            padding:
-            EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20)),
-            height: ScreenUtil.getInstance().setWidth(50),
-            child: Row(
-              children: <Widget>[
-                Text(
-                  "退出登录",
-                  style: Appstyle.BlackGrey14,
-                )
-              ],
+          GestureDetector(
+            onTap: () => dispatch(
+                  personalDataActionCreator.onLogOut(),
+                ),
+            child: Container(
+              color: Colors.white,
+              padding:
+                  EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(20)),
+              height: ScreenUtil.getInstance().setWidth(50),
+              child: Row(
+                children: <Widget>[
+                  Text(
+                    "退出登录",
+                    style: Appstyle.BlackGrey14,
+                  )
+                ],
+              ),
             ),
           )
         ],
