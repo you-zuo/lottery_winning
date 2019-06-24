@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 //通用dialog
 class BaseDialog {
   BuildContext context;
+  //dialog title消息
   String title;
-  BaseDialog(this.context,this.title);
+  //右边按钮颜色
+  Color color;
+  BaseDialog(this.context,this.title,{this.color});
   dialog(){
     showCupertinoDialog(
     context: context,
@@ -27,7 +30,7 @@ class BaseDialog {
               },
               child: Text(
                 '确认',
-                style: TextStyle(color: Colors.red),
+                style: TextStyle(color: color==null?Colors.blue:color),
               )),
         ],
       );

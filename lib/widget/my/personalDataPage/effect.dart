@@ -1,5 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:flutter/material.dart';
 import 'package:lottery_winning/export.dart';
 import 'action.dart';
 import 'state.dart';
@@ -15,7 +15,7 @@ Effect<personalDataState> buildEffect() {
 void _onAction(Action action, Context<personalDataState> ctx) {}
 //退出登录
 void _onLogOut(Action action, Context<personalDataState> ctx) {
-  BaseDialog(ctx.context, "确定要退出登录吗？").dialog();
+  BaseDialog(ctx.context, "确定要退出登录吗？",color: Colors.red).dialog();
 }
 
 //上传头像

@@ -38,3 +38,4 @@ export 'package:fluttertoast/fluttertoast.dart';
 export "package:lottery_winning/utils/baseDialog.dart";
 export 'package:image_picker/image_picker.dart';
 export 'package:lottery_winning/utils/imagePicker.dart';
+export 'package:image_cropper/image_cropper.dart';
