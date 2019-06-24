@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottery_winning/export.dart';
 
+//通用appbar
 class BaseAppBar extends StatelessWidget {
   String titleText;
   Widget _widgetOne;
