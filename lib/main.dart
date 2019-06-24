@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottery_winning/routers/Routes.dart';
@@ -11,7 +12,8 @@ void main() {
         theme: ThemeData(primaryColor: Colors.white),
         localizationsDelegates: const [
           S.delegate,
-          GlobalMaterialLocalizations.delegate
+          GlobalMaterialLocalizations.delegate,
+          FallbackCupertinoLocalisationsDelegate()
         ],
         supportedLocales: S.delegate.supportedLocales,
         initialRoute: '/',
@@ -23,4 +25,20 @@ void main() {
         SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   }
+}
+
+//用于解决CupertinoDialog 国际化报错问题 
+class FallbackCupertinoLocalisationsDelegate
+    extends LocalizationsDelegate<CupertinoLocalizations> {
+  const FallbackCupertinoLocalisationsDelegate();
+
+  @override
+  bool isSupported(Locale locale) => true;
+
+  @override
+  Future<CupertinoLocalizations> load(Locale locale) =>
+      DefaultCupertinoLocalizations.load(locale);
+
+  @override
+  bool shouldReload(FallbackCupertinoLocalisationsDelegate old) => false;
 }

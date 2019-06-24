@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 class BaseDialog {
   BuildContext context;
   String title;
-
   BaseDialog(this.context,this.title);
   dialog(){
     showCupertinoDialog(

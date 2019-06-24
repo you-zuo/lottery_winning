@@ -36,3 +36,4 @@ export 'package:lottery_winning/utils/printUtil.dart';
 export 'utils/baseToast.dart';
 export 'package:fluttertoast/fluttertoast.dart';
 export "package:lottery_winning/utils/baseDialog.dart";
+export 'package:image_picker/image_picker.dart';

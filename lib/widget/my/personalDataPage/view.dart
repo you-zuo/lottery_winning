@@ -19,31 +19,36 @@ Widget buildView(
             color: Color(AppColors.viewGray),
           ),
           //头像
-          Container(
-            height: ScreenUtil.getInstance().setWidth(90),
-            padding: EdgeInsets.all(
-              ScreenUtil.getInstance().setWidth(16),
-            ),
-            color: Colors.white,
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                    child: Text(
-                  "头像",
-                  style: Appstyle.BlackGrey14,
-                )),
-                ExtendedImage.asset(
-                  "assets/images/Dice1.png",
-                  width: ScreenUtil.getInstance().setWidth(59),
-                  height: ScreenUtil.getInstance().setWidth(59),
-                  fit: BoxFit.fill,
-                  shape: BoxShape.circle,
+          GestureDetector(
+            onTap: () => dispatch(
+                  personalDataActionCreator.onImage(),
                 ),
-                SizedBox(
-                  width: ScreenUtil.getInstance().setWidth(10),
-                ),
-                Image.asset("assets/images/r.png")
-              ],
+            child: Container(
+              height: ScreenUtil.getInstance().setWidth(90),
+              padding: EdgeInsets.all(
+                ScreenUtil.getInstance().setWidth(16),
+              ),
+              color: Colors.white,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                      child: Text(
+                    "头像",
+                    style: Appstyle.BlackGrey14,
+                  )),
+                  ExtendedImage.asset(
+                    "assets/images/Dice1.png",
+                    width: ScreenUtil.getInstance().setWidth(59),
+                    height: ScreenUtil.getInstance().setWidth(59),
+                    fit: BoxFit.fill,
+                    shape: BoxShape.circle,
+                  ),
+                  SizedBox(
+                    width: ScreenUtil.getInstance().setWidth(10),
+                  ),
+                  Image.asset("assets/images/r.png")
+                ],
+              ),
             ),
           ),
           //分割线
