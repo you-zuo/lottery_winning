@@ -1,10 +1,12 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:lottery_winning/export.dart';
 
 class personalDataState implements Cloneable<personalDataState> {
+  String image = "assets/images/Dice1.png";
 
   @override
   personalDataState clone() {
-    return personalDataState();
+    return personalDataState()..image=image;
   }
 }
 

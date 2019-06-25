@@ -32,12 +32,13 @@ Widget buildView(
               child: Row(
                 children: <Widget>[
                   Expanded(
-                      child: Text(
-                    "头像",
-                    style: Appstyle.BlackGrey14,
-                  )),
+                    child: Text(
+                      "头像",
+                      style: Appstyle.BlackGrey14,
+                    ),
+                  ),
                   ExtendedImage.asset(
-                    "assets/images/Dice1.png",
+                    state.image,
                     width: ScreenUtil.getInstance().setWidth(59),
                     height: ScreenUtil.getInstance().setWidth(59),
                     fit: BoxFit.fill,
