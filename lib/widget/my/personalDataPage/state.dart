@@ -6,7 +6,7 @@ class personalDataState implements Cloneable<personalDataState> {
 
   @override
   personalDataState clone() {
-    return personalDataState()..image=image;
+    return personalDataState()..image;
   }
 }
 
