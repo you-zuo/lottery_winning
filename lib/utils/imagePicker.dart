@@ -20,14 +20,4 @@ class PickerImage {
       printUtil.print(e);
     }
   }
-
-  Future<Null> _cropImage() async {
-    File croppedFile = await ImageCropper.cropImage(
-      sourcePath: image.path,
-      ratioX: 1.0,
-      ratioY: 1.0,
-      maxWidth: 512,
-      maxHeight: 512,
-    );
-  }
 }
