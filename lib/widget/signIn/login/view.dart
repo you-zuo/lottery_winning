@@ -5,12 +5,10 @@ import 'state.dart';
 import 'package:lottery_winning/export.dart';
 
 Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
-  //初始化分辨率适配ScreeUtil
+//初始化分辨率适配ScreeUtil
   ScreenUtil.instance =
       ScreenUtil(width: 375, height: 667, allowFontScaling: false)
         ..init(viewService.context);
-
-  //用户名控制器
   TextEditingController _textEditingController = TextEditingController();
   //密码控制器
   TextEditingController _textEditingControllers = TextEditingController();
@@ -27,12 +25,11 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
               //log图
               Container(
                 margin: EdgeInsets.only(
-                    top: ScreenUtil.getInstance().setWidth(107) -
-                        ScreenUtil.statusBarHeight),
+                    top: 50),
                 child: Image.asset(
                   "assets/images/log.png",
-                  width: ScreenUtil.getInstance().setWidth(144),
-                  height: ScreenUtil.getInstance().setWidth(58),
+                  width: 150,
+                  height: 60,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -41,9 +38,9 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
           //输入用户名
           Container(
             margin: EdgeInsets.only(
-                left: ScreenUtil.getInstance().setWidth(23),
-                right: ScreenUtil.getInstance().setWidth(23),
-                top: ScreenUtil.getInstance().setWidth(50)),
+                left:23,
+                right: 23,
+                top: 50),
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
@@ -65,8 +62,8 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
           //输入密码
           Container(
             margin: EdgeInsets.only(
-                left: ScreenUtil.getInstance().setWidth(23),
-                right: ScreenUtil.getInstance().setWidth(23)),
+                left: 23,
+                right: 23),
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
@@ -90,12 +87,13 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
           //登录按钮
           Container(
             margin: EdgeInsets.symmetric(
-                horizontal: ScreenUtil.getInstance().setWidth(23),
-                vertical: ScreenUtil.getInstance().setWidth(10)),
+                horizontal:23,
+                vertical: 10),
             child: FlatButton(
               color: Color(AppColors.loginButton),
               onPressed: () {
-                dispatch(loginActionCreator.onTapScreenPage(_textEditingController.text,_textEditingControllers.text));
+                dispatch(loginActionCreator.onTapScreenPage(
+                    _textEditingController.text, _textEditingControllers.text));
               },
               child: Text(
                 S.of(viewService.context).login,
@@ -115,12 +113,12 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
                 ),
               ),
               SizedBox(
-                width: ScreenUtil.getInstance().setWidth(23),
+                width: 23,
               )
             ],
           ),
           SizedBox(
-            height: ScreenUtil.getInstance().setWidth(10),
+            height: 10,
           ),
           //请第三方账号登录
           Row(
@@ -133,7 +131,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
             ],
           ),
           SizedBox(
-            height: ScreenUtil.getInstance().setWidth(10),
+            height: 10,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -142,8 +140,8 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
                 onTap: () => dispatch(loginActionCreator.onAuthToSina()),
                 child: Image.asset(
                   "assets/images/penguin.png",
-                  width: ScreenUtil.getInstance().setWidth(41),
-                  height: ScreenUtil.getInstance().setWidth(41),
+                  width: 41,
+                  height: 41,
                 ),
               )
             ],

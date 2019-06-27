@@ -256,7 +256,7 @@ Widget buildView(
                       style: Appstyle.hitTextStyle))
             ],
           ),
-        )
+        ),
       ],
     )),
   );

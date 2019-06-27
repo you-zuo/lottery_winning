@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:lottery_winning/export.dart';
 
 class loginState implements Cloneable<loginState> {
-
   @override
   loginState clone() {
     return loginState();
