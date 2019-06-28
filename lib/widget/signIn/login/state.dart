@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:lottery_winning/export.dart';
 
 class loginState implements Cloneable<loginState> {
-
   TextEditingController textEditingController;
 
   //密码控制器
   TextEditingController textEditingControllers;
 
   BuildContext context;
+
   @override
   loginState clone() {
     return loginState()
@@ -19,6 +19,8 @@ class loginState implements Cloneable<loginState> {
 }
 
 loginState initState(Map<String, dynamic> args) {
+  //实例化shared_preferences类；
+  SpUtil.getInstance();
 
 //  初始化暂时有问题
 //  ShareSDKRegister register = ShareSDKRegister();
