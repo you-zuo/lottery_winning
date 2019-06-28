@@ -2,11 +2,6 @@ import 'package:lottery_winning/export.dart';
 
 //图片选择器
 
-enum AppState {
-  free,
-  picked,
-  cropped,
-}
 
 class PickerImage {
   File image;

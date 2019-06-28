@@ -22,7 +22,6 @@ var onGenerateRoute = (RouteSettings settings) {
   //统一处理
   final String name = settings.name;
   final Function pageContentBuilder = routes[name];
-
 //  fish_redux用这个方法传参有问题，需要穿参的跳转不需要在这里配置路由
 
 //  if (pageContentBuilder != null) {
@@ -45,4 +44,3 @@ var onGenerateRoute = (RouteSettings settings) {
   );
   return route;
 };
-
