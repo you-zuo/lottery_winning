@@ -33,10 +33,12 @@ void _onAction(Action action, Context<registerState> ctx) {
     BaseToast("请输入QQ").tost();
   } else {
     printUtil.print(value);
+    printUtil.print(SpUtil.getString("title"));
   }
 }
 
 //回到登录页面
 void _goBack(Action action, Context<registerState> ctx) {
-  Navigator.of(ctx.context).pop();
+  //Navigator.of(ctx.context).pop();
+  SpUtil.putString("title", "111111");
 }
