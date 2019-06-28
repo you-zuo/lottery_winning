@@ -29,12 +29,12 @@ Widget buildView(
         child: ListView(
       children: <Widget>[
         SizedBox(
-          height: ScreenUtil.getInstance().setWidth(20),
+          height: 20,
         ),
         //账号
         Container(
           margin: EdgeInsets.symmetric(
-            horizontal: ScreenUtil.getInstance().setWidth(23),
+            horizontal: 23,
           ),
           decoration: BoxDecoration(
             border: Border(
@@ -64,7 +64,7 @@ Widget buildView(
         //密码
         Container(
           margin: EdgeInsets.symmetric(
-            horizontal: ScreenUtil.getInstance().setWidth(23),
+            horizontal: 23,
           ),
           decoration: BoxDecoration(
             border: Border(
@@ -96,7 +96,7 @@ Widget buildView(
         //重复密码
         Container(
           margin: EdgeInsets.symmetric(
-            horizontal: ScreenUtil.getInstance().setWidth(23),
+            horizontal: 23,
           ),
           decoration: BoxDecoration(
             border: Border(
@@ -128,7 +128,7 @@ Widget buildView(
         //手机号
         Container(
           margin: EdgeInsets.symmetric(
-            horizontal: ScreenUtil.getInstance().setWidth(23),
+            horizontal: 23,
           ),
           decoration: BoxDecoration(
             border: Border(
@@ -159,7 +159,7 @@ Widget buildView(
         //邮箱
         Container(
           margin: EdgeInsets.symmetric(
-            horizontal: ScreenUtil.getInstance().setWidth(23),
+            horizontal: 23,
           ),
           decoration: BoxDecoration(
             border: Border(
@@ -190,7 +190,7 @@ Widget buildView(
         //QQ
         Container(
           margin: EdgeInsets.symmetric(
-            horizontal: ScreenUtil.getInstance().setWidth(23),
+            horizontal: 23,
           ),
           decoration: BoxDecoration(
             border: Border(
@@ -220,9 +220,7 @@ Widget buildView(
         ),
         //登录按钮
         Container(
-          margin: EdgeInsets.symmetric(
-              horizontal: ScreenUtil.getInstance().setWidth(23),
-              vertical: ScreenUtil.getInstance().setWidth(10)),
+          margin: EdgeInsets.symmetric(horizontal: 23, vertical: 10),
           child: FlatButton(
             color: Color(AppColors.loginButton),
             onPressed: () {
@@ -244,7 +242,7 @@ Widget buildView(
         ),
         //点击登录
         Container(
-          margin: EdgeInsets.only(right: ScreenUtil.getInstance().setWidth(23)),
+          margin: EdgeInsets.only(right: 23),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
