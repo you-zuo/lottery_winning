@@ -17,9 +17,27 @@ Effect<loginState> buildEffect() {
 void _onAction(Action action, Context<loginState> ctx) {}
 
 void _tapScreenPage(Action action, Context<loginState> ctx) {
-  printUtil.print(action.payload);
-   Navigator.pushNamedAndRemoveUntil(
-     ctx.context, "/screenPage", (routes) => false);  
+  if (action.payload["accountNumber"].length == 0) {
+    BaseToast("请输入电话号码").tost();
+  } else if (action.payload["passWord"].length == 0) {
+    BaseToast("请输入密码").tost();
+  } else {
+    HttpUtils.postHttp(
+      url: Url.BASE_PHONE,
+      data: {
+        "phone": action.payload["accountNumber"],
+        "sn": "8b3fb44d4bc2d5c5d8cd25891ba6e32c"
+      },
+      onCallBack: (v) {
+        if (v.toString().length == 3) {
+          Navigator.pushNamedAndRemoveUntil(
+              ctx.context, "/screenPage", (routes) => false);
+        } else {
+          BaseToast("登录失败").tost();
+        }
+      },
+    );
+  }
 }
 
 //跳转注册页面

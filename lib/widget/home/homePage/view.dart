@@ -1,17 +1,13 @@
 import 'package:fish_redux/fish_redux.dart';
-import 'package:flutter/material.dart';
+
+import 'package:flutter/material.dart'
+    hide TabController, Tab, TabBar, TabBarView;
 import 'package:lottery_winning/export.dart';
+import 'package:lottery_winning/utils/newTabs.dart';
 import 'action.dart';
 import 'state.dart';
 
 Widget buildView(HomeState state, Dispatch dispatch, ViewService viewService) {
-  TabController _tabController;
-  ScrollController _scrollViewController = ScrollController();
-  _tabController = TabController(
-    length: state.tabBars.length,
-    vsync: ScrollableState(),
-  );
-
   List<String> getDataList() {
     List<String> list = [];
     for (int i = 0; i < 100; i++) {
@@ -67,7 +63,7 @@ Widget buildView(HomeState state, Dispatch dispatch, ViewService viewService) {
   return BaseAppBarNolife(
       S.of(viewService.context).homeTitle,
       NestedScrollView(
-          controller: _scrollViewController,
+          controller: state.scrollViewController,
           headerSliverBuilder: (context, innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
@@ -108,7 +104,7 @@ Widget buildView(HomeState state, Dispatch dispatch, ViewService viewService) {
                 //tabbar
                 bottom: TabBar(
                   tabs: state.tabBars,
-                  controller: _tabController,
+                  controller: state.tabController,
                   indicatorColor: Color(AppColors.redColor),
                   labelColor: Color(AppColors.redColor),
                   unselectedLabelColor: Colors.black,
@@ -118,7 +114,7 @@ Widget buildView(HomeState state, Dispatch dispatch, ViewService viewService) {
             ];
           },
           body: TabBarView(
-            controller: _tabController,
+            controller: state.tabController,
             children: <Widget>[
               items(),
               items(),

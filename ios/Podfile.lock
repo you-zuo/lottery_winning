@@ -8,6 +8,9 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - image_cropper (0.0.1):
+    - Flutter
+    - TOCropViewController (~> 2.5.0)
   - image_picker (0.0.1):
     - Flutter
   - mob_sharesdk (4.2.6):
@@ -35,6 +38,7 @@ PODS:
   - sqflite (0.0.1):
     - Flutter
     - FMDB (~> 2.7.2)
+  - TOCropViewController (2.5.0)
   - url_launcher (0.0.1):
     - Flutter
 
@@ -42,6 +46,7 @@ DEPENDENCIES:
   - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - image_cropper (from `.symlinks/plugins/image_cropper/ios`)
   - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
@@ -55,6 +60,7 @@ SPEC REPOS:
     - mob_sharesdk
     - MOBFoundation
     - Reachability
+    - TOCropViewController
 
 EXTERNAL SOURCES:
   connectivity:
@@ -63,6 +69,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/flutter/ios"
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
+  image_cropper:
+    :path: ".symlinks/plugins/image_cropper/ios"
   image_picker:
     :path: ".symlinks/plugins/image_picker/ios"
   path_provider:
@@ -81,6 +89,7 @@ SPEC CHECKSUMS:
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  image_cropper: f25bdfbf1ef970c9a0a0f78306fb6a0aaac7229e
   image_picker: 16e5fec1fbc87fd3b297c53e4048521eaf17cd06
   mob_sharesdk: e993f357a6f1581a956aea16ea142c9de0425bf7
   MOBFoundation: 246159a97f5e6c8a271b674dd885dc4b0953e45e
@@ -89,6 +98,7 @@ SPEC CHECKSUMS:
   shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523
   sharesdk: 5ebfbe89c21b5667d985594ef6a4357c12eb7e8d
   sqflite: ff1d9da63c06588cc8d1faf7256d741f16989d5a
+  TOCropViewController: d86078d3a57a70c116bf3db7c89c80046a0e5fdf
   url_launcher: 0067ddb8f10d36786672aa0722a21717dba3a298
 
 PODFILE CHECKSUM: aff02bfeed411c636180d6812254b2daeea14d09

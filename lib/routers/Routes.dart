@@ -8,6 +8,7 @@ final routes = {
   '/register': (context) => registerPage().buildPage(null),
   '/myPage': (context) => myPage().buildPage(null),
   '/homePage': (context) => HomePage().buildPage(null),
+  '/homeDetailsPage': (context) => HomeDetailsPage().buildPage(null),
   '/planPage': (context) => PlanPagePage().buildPage(null),
   '/planPages': (context) => PlanPagesPage().buildPage(null),
   '/purchasePage': (context) => PurchasePage().buildPage(null),
