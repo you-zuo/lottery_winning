@@ -1,19 +1,26 @@
 import 'package:fish_redux/fish_redux.dart';
-import 'package:flutter/material.dart';
-class HomeState implements Cloneable<HomeState> {
 
-  HomeState({this.imagesList,this.tabBars});
+import 'package:flutter/material.dart'
+    hide TabController, Tab, TabBar, TabBarView, NestedScrollView;
+import 'package:lottery_winning/utils/TabController.dart';
+import 'package:lottery_winning/utils/newTabs.dart';
+class HomeState implements Cloneable<HomeState> {
+  HomeState({this.imagesList, this.tabBars});
+
   List<Widget> imagesList;
   List<Tab> tabBars;
+  TabController tabController;
+  ScrollController scrollViewController;
 
   @override
   HomeState clone() {
-    return HomeState();
+    return HomeState()
+      ..tabController = tabController
+      ..scrollViewController = scrollViewController;
   }
 }
 
 HomeState initState(Map<String, dynamic> args) {
-
   List<Widget> images = [
     Image.asset(
       "assets/images/Dice1.png",
@@ -46,5 +53,10 @@ HomeState initState(Map<String, dynamic> args) {
       text: "全国彩",
     ),
   ];
-  return HomeState(imagesList: images,tabBars: tabs);
+  return HomeState(imagesList: images, tabBars: tabs)
+    ..scrollViewController = new ScrollController()
+    ..tabController = TabController(
+      length: tabs.length,
+      vsync: ScrollableState(),
+    );
 }

@@ -6,23 +6,6 @@ import 'state.dart';
 
 Widget buildView(
     registerState state, Dispatch dispatch, ViewService viewService) {
-  //账号控制器
-  TextEditingController _userNameController = TextEditingController();
-  //密码控制器
-  TextEditingController _passWordController = TextEditingController();
-
-  //重复密码控制器
-  TextEditingController _passWordControllers = TextEditingController();
-
-  //手机号码控制器
-  TextEditingController _phoneController = TextEditingController();
-
-  //邮箱控制器
-  TextEditingController _emailController = TextEditingController();
-
-  //qq控制器
-  TextEditingController _qqController = TextEditingController();
-
   return BaseAppBarNolife(
     S.of(viewService.context).register,
     Container(
@@ -45,7 +28,7 @@ Widget buildView(
             ),
           ),
           child: TextField(
-            controller: _userNameController,
+            controller: state.userNameController,
             maxLines: 1,
             decoration: InputDecoration(
               border: InputBorder.none,
@@ -75,7 +58,7 @@ Widget buildView(
             ),
           ),
           child: TextField(
-            controller: _passWordController,
+            controller: state.passWordController,
             maxLines: 1,
             obscureText: true,
             keyboardType: TextInputType.number,
@@ -107,7 +90,7 @@ Widget buildView(
             ),
           ),
           child: TextField(
-            controller: _passWordControllers,
+            controller: state.passWordControllers,
             maxLines: 1,
             obscureText: true,
             keyboardType: TextInputType.number,
@@ -139,7 +122,7 @@ Widget buildView(
             ),
           ),
           child: TextField(
-            controller: _phoneController,
+            controller: state.phoneController,
             maxLines: 1,
             keyboardType: TextInputType.phone,
             decoration: InputDecoration(
@@ -170,7 +153,7 @@ Widget buildView(
             ),
           ),
           child: TextField(
-            controller: _emailController,
+            controller: state.emailController,
             maxLines: 1,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
@@ -201,7 +184,7 @@ Widget buildView(
             ),
           ),
           child: TextField(
-            controller: _qqController,
+            controller: state.qqController,
             maxLines: 1,
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
@@ -226,12 +209,12 @@ Widget buildView(
             onPressed: () {
               dispatch(
                 registerActionCreator.onAction(
-                    _userNameController.text,
-                    _passWordController.text,
-                    _passWordControllers.text,
-                    _phoneController.text,
-                    _emailController.text,
-                    _qqController.text),
+                    state.userNameController.text,
+                    state.passWordController.text,
+                    state.passWordControllers.text,
+                    state.phoneController.text,
+                    state.emailController.text,
+                    state.qqController.text),
               );
             },
             child: Text(

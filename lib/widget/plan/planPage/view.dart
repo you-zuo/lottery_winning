@@ -1,18 +1,13 @@
 import 'package:fish_redux/fish_redux.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    hide TabController, Tab, TabBar, TabBarView, NestedScrollView;
 import 'package:lottery_winning/export.dart' hide PlanPageState;
+import 'package:lottery_winning/utils/newTabs.dart';
 import 'action.dart';
 import 'state.dart';
 
 Widget buildView(
     PlanPageState state, Dispatch dispatch, ViewService viewService) {
-
-  TabController _tabController;
-  _tabController = TabController(
-    length: state.tabBars.length,
-    vsync: ScrollableState(),
-  );
-
   return BaseAppBarNolife(
     S.of(viewService.context).FollowUpPlan,
     Container(
@@ -22,7 +17,7 @@ Widget buildView(
             children: <Widget>[
               Expanded(
                 child: TabBar(
-                  controller: _tabController,
+                  controller: state.tabController,
                   indicatorColor: Color(AppColors.redColor),
                   labelColor: Color(AppColors.redColor),
                   unselectedLabelColor: Colors.black,

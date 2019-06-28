@@ -6,12 +6,13 @@ import 'package:lottery_winning/utils/TabController.dart';
 
 class PlanPageState implements Cloneable<PlanPageState> {
   List<Tab> tabBars = new List<Tab>();
+  TabController tabController;
 
   PlanPageState({this.tabBars});
 
   @override
   PlanPageState clone() {
-    return PlanPageState();
+    return PlanPageState()..tabController = tabController;
   }
 }
 
@@ -34,5 +35,9 @@ PlanPageState initState(Map<String, dynamic> args) {
       text: "境外彩",
     ),
   ];
-  return PlanPageState(tabBars:tabBar);
+  return PlanPageState(tabBars: tabBar)
+    ..tabController = TabController(
+      length: tabBar.length,
+      vsync: ScrollableState(),
+    );
 }

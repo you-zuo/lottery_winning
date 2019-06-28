@@ -25,7 +25,7 @@ void _onAction(Action action, Context<registerState> ctx) {
     BaseToast("两次输入的密码不同，请重新输入！").tost();
   } else if (value["phone"].length == 0) {
     BaseToast("请输入电话号码").tost();
-  } else if (value["phone"].length != 13) {
+  } else if (value["phone"].length != 11) {
     BaseToast("请输入正确的电话号码").tost();
   } else if (value["email"].length == 0) {
     BaseToast("请输入邮箱").tost();

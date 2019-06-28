@@ -9,9 +9,6 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
   ScreenUtil.instance =
       ScreenUtil(width: 375, height: 667, allowFontScaling: false)
         ..init(viewService.context);
-  TextEditingController _textEditingController = TextEditingController();
-  //密码控制器
-  TextEditingController _textEditingControllers = TextEditingController();
 
   return BaseAppBarNolife(
     " ",
@@ -50,7 +47,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
               ),
             ),
             child: TextField(
-              controller: _textEditingController,
+              controller: state.textEditingController,
               maxLines: 1,
               decoration: InputDecoration(
                 border: InputBorder.none,
@@ -73,7 +70,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
               ),
             ),
             child: TextField(
-              controller: _textEditingControllers,
+              controller: state.textEditingControllers,
               maxLines: 1,
               obscureText: true,
               keyboardType: TextInputType.number,
@@ -93,7 +90,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
               color: Color(AppColors.loginButton),
               onPressed: () {
                 dispatch(loginActionCreator.onTapScreenPage(
-                    _textEditingController.text, _textEditingControllers.text));
+                    state.textEditingController.text, state.textEditingControllers.text));
               },
               child: Text(
                 S.of(viewService.context).login,
