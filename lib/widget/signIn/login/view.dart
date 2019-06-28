@@ -9,7 +9,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
   ScreenUtil.instance =
       ScreenUtil(width: 375, height: 667, allowFontScaling: false)
         ..init(viewService.context);
-
+  screenAdapter.init(viewService.context, designWidth: 375, designHeight: 667);
   return BaseAppBarNolife(
     " ",
     Container(
@@ -21,8 +21,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
             children: <Widget>[
               //log图
               Container(
-                margin: EdgeInsets.only(
-                    top: 50),
+                margin: EdgeInsets.only(top: 50),
                 child: Image.asset(
                   "assets/images/log.png",
                   width: 150,
@@ -34,10 +33,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
           ),
           //输入用户名
           Container(
-            margin: EdgeInsets.only(
-                left:23,
-                right: 23,
-                top: 50),
+            margin: EdgeInsets.only(left: 23, right: 23, top: 50),
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
@@ -58,9 +54,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
           ),
           //输入密码
           Container(
-            margin: EdgeInsets.only(
-                left: 23,
-                right: 23),
+            margin: EdgeInsets.only(left: 23, right: 23),
             decoration: BoxDecoration(
               border: Border(
                 bottom: BorderSide(
@@ -83,14 +77,13 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
           ),
           //登录按钮
           Container(
-            margin: EdgeInsets.symmetric(
-                horizontal:23,
-                vertical: 10),
+            margin: EdgeInsets.symmetric(horizontal: 23, vertical: 10),
             child: FlatButton(
               color: Color(AppColors.loginButton),
               onPressed: () {
                 dispatch(loginActionCreator.onTapScreenPage(
-                    state.textEditingController.text, state.textEditingControllers.text));
+                    state.textEditingController.text,
+                    state.textEditingControllers.text));
               },
               child: Text(
                 S.of(viewService.context).login,
