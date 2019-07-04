@@ -44,11 +44,11 @@ void _tapScreenPage(Action action, Context<loginState> ctx) {
 
 //跳转注册页面
 void _tapRegister(Action action, Context<loginState> ctx) {
- // Navigator.pushNamed(ctx.context, '/register');
-  Navigator.push(
+  Navigator.pushNamed(ctx.context, '/register');
+  /*Navigator.push(
     ctx.context,
     MaterialPageRoute(builder: (context) => testPage().buildPage(null)),
-  );
+  );*/
 }
 
 void _authToSina(Action action, Context<loginState> ctx) {
@@ -61,6 +61,7 @@ void _authToSina(Action action, Context<loginState> ctx) {
 }
 
 void showAlert(SSDKResponseState state, Map content, BuildContext context) {
+  // ignore: unused_local_variable
   String title = "失败";
   print(state);
   switch (state) {
