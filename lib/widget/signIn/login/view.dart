@@ -5,7 +5,7 @@ import 'state.dart';
 import 'package:lottery_winning/export.dart';
 
 Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
-//初始化分辨率适配ScreeUtil
+  /*初始化分辨率适配ScreeUtil*/
   ScreenUtil.instance =
       ScreenUtil(width: 375, height: 667, allowFontScaling: false)
         ..init(viewService.context);
@@ -31,7 +31,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
               ),
             ],
           ),
-          //输入用户名
+          /*输入用户名*/
           Container(
             margin: EdgeInsets.only(left: 23, right: 23, top: 50),
             decoration: BoxDecoration(
@@ -52,7 +52,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
               ),
             ),
           ),
-          //输入密码
+          /*输入密码*/
           Container(
             margin: EdgeInsets.only(left: 23, right: 23),
             decoration: BoxDecoration(
@@ -75,7 +75,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
               ),
             ),
           ),
-          //登录按钮
+          /*登录按钮*/
           Container(
             margin: EdgeInsets.symmetric(horizontal: 23, vertical: 10),
             child: FlatButton(
@@ -110,7 +110,7 @@ Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
           SizedBox(
             height: 10,
           ),
-          //请第三方账号登录
+          /*请第三方账号登录*/
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

@@ -14,7 +14,7 @@ Effect<personalDataState> buildEffect() {
 void _onAction(Action action, Context<personalDataState> ctx) {}
 //退出登录
 void _onLogOut(Action action, Context<personalDataState> ctx) {
-  BaseDialog(ctx.context, "确定要退出登录吗？", color: Colors.red).dialog();
+  BaseDialog(ctx.context, "确定要退出登录吗？", color: Colors.red,tag: "logOut").dialog();
 }
 
 //上传头像

@@ -251,9 +251,12 @@ Widget buildView(
               height: ScreenUtil.getInstance().setWidth(50),
               child: Row(
                 children: <Widget>[
-                  Text(
-                    "退出登录",
-                    style: Appstyle.BlackGrey14,
+                  Hero(
+                    tag: "logOut",
+                    child: Text(
+                      "退出登录",
+                      style: Appstyle.BlackGrey14,
+                    ),
                   )
                 ],
               ),

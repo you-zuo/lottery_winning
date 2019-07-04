@@ -15,6 +15,7 @@ Effect<testState> buildEffect() {
 }
 
 void _onAction(Action action, Context<testState> ctx) {
+  printUtil.print("effect");
   HttpUtils.getHttp(
     url: "http://h.playdota.cc/api/Topic/get_topic_list",
     onCallBack: (v) {

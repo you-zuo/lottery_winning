@@ -1,5 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:lottery_winning/home_bean_entity.dart';
+import 'package:lottery_winning/utils/printUtil.dart';
 
 
 
@@ -13,7 +14,7 @@ enum testAction { action,tap }
 
 class testActionCreator {
   static Action updateAction(List<HomeBeanDataData> userList) {
-    print("由effect请求后");
+    printUtil.print("action");
     return  Action(testAction.action, payload: userList);
   }
   static Action tapAction() {

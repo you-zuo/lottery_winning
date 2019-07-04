@@ -9,7 +9,7 @@ void main() {
   runApp(
     MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(primaryColor: Colors.white),
+        theme: ThemeData(primaryColor: Colors.white, primarySwatch: Colors.red),
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -27,7 +27,7 @@ void main() {
   }
 }
 
-//用于解决CupertinoDialog 国际化报错问题 
+//用于解决CupertinoDialog 国际化报错问题
 class FallbackCupertinoLocalisationsDelegate
     extends LocalizationsDelegate<CupertinoLocalizations> {
   const FallbackCupertinoLocalisationsDelegate();

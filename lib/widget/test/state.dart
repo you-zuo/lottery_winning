@@ -1,6 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:lottery_winning/home_bean_entity.dart';
-
+import 'package:lottery_winning/utils/printUtil.dart';
 //页面初始化的地方，用于配置初始值
 
 class testState implements Cloneable<testState> {
@@ -10,6 +10,8 @@ class testState implements Cloneable<testState> {
 
   @override
   testState clone() {
+    printUtil.print("action");
+
     return testState();
   }
 }
