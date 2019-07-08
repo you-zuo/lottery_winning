@@ -7,8 +7,8 @@ import 'package:lottery_winning/export.dart';
 Widget buildView(loginState state, Dispatch dispatch, ViewService viewService) {
   /*初始化分辨率适配ScreeUtil*/
   ScreenUtil.instance =
-      ScreenUtil(width: 375, height: 667, allowFontScaling: false)
-        ..init(viewService.context);
+  ScreenUtil(width: 375, height: 667, allowFontScaling: false)
+    ..init(viewService.context);
   screenAdapter.init(viewService.context, designWidth: 375, designHeight: 667);
   return BaseAppBarNolife(
     " ",

@@ -19,22 +19,24 @@ environment:
 dependencies:
   flutter_localizations:
     sdk: flutter
-  sharesdk: ^1.1.1
-  shared_preferences: ^0.5.3+1
-  flutter_swiper: ^1.1.6
-  flutter_screenutil: ^0.5.2
-  dio: ^2.1.6
-  flutter_offline: ^0.2.4
-  flutter_bloc: ^0.15.1
-  url_launcher: ^5.0.3
-  extended_image: ^0.5.1
-  extended_image_library: ^0.1.3
-  flutter_cache_manager: ^1.0.0
-  path_provider: ^1.1.0
-  fish_redux: ^0.2.2
-  fluro: ^1.4.0
-  fluttertoast: ^3.1.0
+  sharesdk: 1.1.1
+  shared_preferences: 0.5.3+1
+  flutter_swiper: 1.1.6
+  flutter_screenutil: 0.5.2
+  dio: 2.1.6
+  flutter_offline: 0.2.4
+  flutter_bloc: 0.15.1
+  url_launcher: 5.0.3
+  extended_image: 0.5.1
+  extended_image_library: 0.1.3
+  flutter_cache_manager: 1.0.0
+  path_provider: 1.1.0
+  fish_redux: 0.2.2
+  fluro: 1.4.0
+  fluttertoast: 3.1.0
   image_picker: 0.6.0+3
+  flutter_ijkplayer: 0.3.0
+  decimal: 0.3.3
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2

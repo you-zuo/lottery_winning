@@ -17,7 +17,7 @@ Widget buildView(testState state, Dispatch dispatch, ViewService viewService) {
             onTap: () => dispatch(testActionCreator.tapAction()),
             child: Card(
               child: ListTile(
-                leading: Text("编号" + state.userList[index].times),
+                leading: Text("编号+${state.userList[index].times}"),
               ),
             ),
           );

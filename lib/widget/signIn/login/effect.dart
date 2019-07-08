@@ -1,5 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:lottery_winning/widget/test/page.dart';
+import 'package:lottery_winning/widget/test/player/player_page/page.dart';
 import 'action.dart';
 import 'state.dart';
 import 'package:flutter/material.dart';
@@ -17,13 +18,18 @@ Effect<loginState> buildEffect() {
 void _onAction(Action action, Context<loginState> ctx) {}
 
 void _tapScreenPage(Action action, Context<loginState> ctx) {
+
   if (action.payload["accountNumber"].length == 0) {
     BaseToast("请输入电话号码").tost();
   } else if (action.payload["passWord"].length == 0) {
     BaseToast("请输入密码").tost();
   } else {
-    Navigator.pushNamedAndRemoveUntil(
-              ctx.context, "/screenPage", (routes) => false);
+     Navigator.pushNamedAndRemoveUntil(
+               ctx.context, "/screenPage", (routes) => false);
+//    Navigator.push(
+//    ctx.context,
+//    MaterialPageRoute(builder: (context) => PlayerPage().buildPage(null),),
+//  );
 //    HttpUtils.postHttp(
 //      url: Url.BASE_PHONE,
 //      data: {
@@ -44,11 +50,11 @@ void _tapScreenPage(Action action, Context<loginState> ctx) {
 
 //跳转注册页面
 void _tapRegister(Action action, Context<loginState> ctx) {
-  Navigator.pushNamed(ctx.context, '/register');
-  /*Navigator.push(
+  // Navigator.pushNamed(ctx.context, '/register');
+  Navigator.push(
     ctx.context,
     MaterialPageRoute(builder: (context) => testPage().buildPage(null)),
-  );*/
+  );
 }
 
 void _authToSina(Action action, Context<loginState> ctx) {
