@@ -35,50 +35,6 @@ class ScreenPageState extends State<ScreenPage> {
   int _currentIndex = 0;
 
   @override
-  Widget build(BuildContext context) {
-    ScreenUtil.instance =
-        ScreenUtil(width: 375, height: 667, allowFontScaling: false)
-          ..init(context);
-    final botNavBar = BottomNavigationBar(
-      fixedColor: Color(AppColors.redColor),
-      items: _navigationViews.map(
-        (view) {
-          return view.item;
-        },
-      ).toList(),
-      //当前用户选择的item
-      currentIndex: _currentIndex,
-      //BottomNavigationBar动画禁用
-      type: BottomNavigationBarType.fixed,
-      onTap: (index) {
-        setState(() {
-          _currentIndex = index;
-          _pageController.animateToPage(_currentIndex,
-              duration: Duration(milliseconds: 300), curve: Curves.easeIn);
-        });
-      },
-    );
-
-    return Scaffold(
-      body: PageView.builder(
-        physics: NeverScrollableScrollPhysics(),
-        itemBuilder: (context, index) {
-          return _pages[index];
-        },
-        controller: _pageController,
-        itemCount: _pages.length,
-        onPageChanged: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        //cacheCount: 5,
-      ),
-      bottomNavigationBar: botNavBar,
-    );
-  }
-
-  @override
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -110,17 +66,53 @@ class ScreenPageState extends State<ScreenPage> {
     _pageController = PageController(initialPage: _currentIndex);
 
     //body的page
-    _pages = [
-      HomePage().buildPage(null),
-      PlanPagePage().buildPage(null),
-      PurchasePage().buildPage(null),
-      myPage().buildPage(null)
-    ];
+    _pages = [HomePage(), PlanPage(), PurchasePage(), MyPage()];
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final botNavBar = BottomNavigationBar(
+      fixedColor: Color(AppColors.redColor),
+      items: _navigationViews.map(
+        (view) {
+          return view.item;
+        },
+      ).toList(),
+      //当前用户选择的item
+      currentIndex: _currentIndex,
+      //BottomNavigationBar动画禁用
+      type: BottomNavigationBarType.fixed,
+      onTap: (index) {
+        setState(() {
+          _currentIndex = index;
+          _pageController.animateToPage(_currentIndex,
+              duration: Duration(milliseconds: 300), curve: Curves.easeIn);
+        });
+      },
+    );
+
+    return Scaffold(
+      body: PageView.builder(
+       // physics: NeverScrollableScrollPhysics(),
+        itemBuilder: (context, index) {
+          return _pages[index];
+        },
+        controller: _pageController,
+        itemCount: _pages.length,
+        onPageChanged: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        //cacheCount: 5,
+      ),
+      bottomNavigationBar: botNavBar,
+    );
   }
 }
