@@ -14,6 +14,7 @@ final routes = {
   '/planPage': (context) => PlanPage(),
   '/planPages': (context) => PlanPages(),
   '/msgPage': (context) => MsgPage(),
+  '/settingPage': (context) => SettingPage(),
   '/personalDataPage': (context) => PersonalDataPage(),
   '/homeDetailsPage': (context,{arguments}) => HomeDetailsPage(arguments:arguments),
 };

@@ -73,7 +73,9 @@ class ScreenPageState extends State<ScreenPage> {
   void dispose() {
     // TODO: implement dispose
     super.dispose();
+    _pageController.dispose();
   }
+  
 
   @override
   Widget build(BuildContext context) {

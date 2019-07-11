@@ -12,9 +12,8 @@ class BaseDialog {
 
   //右边按钮颜色
   Color color;
-  String tag;
 
-  BaseDialog(this.context, this.title, {this.color, this.tag});
+  BaseDialog(this.context, this.title, {this.color});
 
   dialog() {
     if (Platform.isIOS) {

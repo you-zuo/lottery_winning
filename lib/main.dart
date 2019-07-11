@@ -6,15 +6,17 @@ import 'package:lottery_winning/routers/Routes.dart';
 import 'export.dart';
 
 void main() {
+  setupLocator();
   runApp(
     MultiProvider(providers: [
       ChangeNotifierProvider.value(value: HomeProviderMode()),
       ChangeNotifierProvider.value(value: HomeDetailsProviderMode()),
       ChangeNotifierProvider.value(value: PlanProviderMode()),
-      ChangeNotifierProvider.value(value: PlanProviderMode()),
+      ChangeNotifierProvider.value(value: PlansProviderMode()),
       ChangeNotifierProvider.value(value: LoginProviderMode()),
       ChangeNotifierProvider.value(value: RegisterProviderMode()),
       ChangeNotifierProvider.value(value: MyProviderMode()),
+      ChangeNotifierProvider.value(value: PersonalDataProviderMode()),
     ], child: MyApp()),
   );
   if (Platform.isAndroid) {
@@ -52,6 +54,8 @@ class MyApp extends StatelessWidget {
           GlobalMaterialLocalizations.delegate,
           FallbackCupertinoLocalisationsDelegate()
         ],
+        navigatorKey: getIt<NavigateService>().key,
+        routes: {'/errorPage': (_) => ErrorPage()},
         supportedLocales: S.delegate.supportedLocales,
         initialRoute: '/',
         onGenerateRoute: onGenerateRoute);

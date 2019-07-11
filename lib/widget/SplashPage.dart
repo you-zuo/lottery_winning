@@ -15,7 +15,7 @@ class _SplashActivityState extends State<SplashActivity> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    timer = new Timer(const Duration(milliseconds: 1500), () {
+    timer =  Timer(const Duration(milliseconds: 1500), () {
       try {
         Navigator.pushNamedAndRemoveUntil(
             context, "/loginPage", (routes) => false);

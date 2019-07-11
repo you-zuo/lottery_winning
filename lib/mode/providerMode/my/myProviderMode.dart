@@ -14,7 +14,9 @@ class MyProviderMode with ChangeNotifier {
   void onTapShare() {}
 
   //设置
-  void onTapSetting() {}
+  void onTapSetting(context) {
+     Navigator.pushNamed(context, "/settingPage");
+  }
 
   //个人资料
   void onTapPersonalData(context) {

@@ -4,6 +4,8 @@ import 'package:lottery_winning/export.dart';
 class PersonalDataPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _counter = Provider.of<PersonalDataProviderMode>(context);
+
     return BaseAppBarNolife(
       "个人资料",
       Container(
@@ -18,7 +20,7 @@ class PersonalDataPage extends StatelessWidget {
             ),
             //头像
             GestureDetector(
-              onTap: () => null,
+              onTap: () => _counter.uploadImage(),
               child: Container(
                 height: ScreenUtil.getInstance().setWidth(180),
                 padding: EdgeInsets.all(
@@ -114,9 +116,9 @@ class PersonalDataPage extends StatelessWidget {
                       children: <Widget>[
                         Expanded(
                             child: Text(
-                              "手机号码",
-                              style: Appstyle.BlackGrey14,
-                            )),
+                          "手机号码",
+                          style: Appstyle.BlackGrey14,
+                        )),
                         Text(
                           "15181854324",
                           style: Appstyle.grayColor14,
@@ -148,9 +150,9 @@ class PersonalDataPage extends StatelessWidget {
                       children: <Widget>[
                         Expanded(
                             child: Text(
-                              "电子邮箱",
-                              style: Appstyle.BlackGrey14,
-                            )),
+                          "电子邮箱",
+                          style: Appstyle.BlackGrey14,
+                        )),
                         Image.asset("assets/images/r.png")
                       ],
                     ),
@@ -175,9 +177,9 @@ class PersonalDataPage extends StatelessWidget {
                       children: <Widget>[
                         Expanded(
                             child: Text(
-                              "修改密码",
-                              style: Appstyle.BlackGrey14,
-                            )),
+                          "修改密码",
+                          style: Appstyle.BlackGrey14,
+                        )),
                         Image.asset("assets/images/r.png")
                       ],
                     ),
@@ -240,8 +242,8 @@ class PersonalDataPage extends StatelessWidget {
               onTap: () => null,
               child: Container(
                 color: Colors.white,
-                padding:
-                EdgeInsets.only(left: ScreenUtil.getInstance().setWidth(40)),
+                padding: EdgeInsets.only(
+                    left: ScreenUtil.getInstance().setWidth(40)),
                 height: ScreenUtil.getInstance().setWidth(100),
                 child: Row(
                   children: <Widget>[

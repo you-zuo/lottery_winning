@@ -86,8 +86,7 @@ class _LoginPageState extends State<LoginPage> {
               margin: EdgeInsets.symmetric(horizontal: 23, vertical: 10),
               child: FlatButton(
                 color: Color(AppColors.loginButton),
-                onPressed: () => _counter.onTapLogin(context,
-                    textEditingController.text, textEditingControllers.text),
+                onPressed: () => _counter.onTapLogin(context,textEditingController.text, textEditingControllers.text),
                 child: Text(
                   S.of(context).login,
                   style: Appstyle.witTextStyle,
