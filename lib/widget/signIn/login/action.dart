@@ -25,4 +25,5 @@ class loginActionCreator {
   static Action onAuthToSina() {
     return const Action(loginAction.authToSina);
   }
+
 }

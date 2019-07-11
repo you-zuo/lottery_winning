@@ -41,5 +41,4 @@ export 'dart:io';
 export 'constants.dart';
 export 'package:lottery_winning/utils/screen_adapter.dart';
 export 'package:lottery_winning/utils/SpUtil.dart';
-export "package:flutter_ijkplayer/flutter_ijkplayer.dart";
 export 'package:lottery_winning/utils/NumUtil.dart';

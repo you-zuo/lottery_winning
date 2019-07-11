@@ -1,5 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Action;
 import 'package:lottery_winning/utils/printUtil.dart';
 import 'package:lottery_winning/widget/home/homeDetailsPage/page.dart';
 import 'action.dart';

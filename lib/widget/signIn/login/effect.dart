@@ -1,13 +1,13 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:lottery_winning/widget/test/page.dart';
-import 'package:lottery_winning/widget/test/player/player_page/page.dart';
 import 'action.dart';
 import 'state.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Action;
 import 'package:lottery_winning/export.dart';
 
 Effect<loginState> buildEffect() {
   return combineEffects(<Object, Effect<loginState>>{
+    Lifecycle.build: _onScreenUtil,
     loginAction.action: _onAction,
     loginAction.tapScreenPage: _tapScreenPage,
     loginAction.tapRegister: _tapRegister,
@@ -17,34 +17,23 @@ Effect<loginState> buildEffect() {
 
 void _onAction(Action action, Context<loginState> ctx) {}
 
-void _tapScreenPage(Action action, Context<loginState> ctx) {
+void _onScreenUtil(Action action, Context<loginState> ctx) {
+  printUtil.print("我初始化了");
+  /*初始化分辨率适配ScreeUtil*/
+  ScreenUtil.instance =
+      ScreenUtil(width: 375, height: 667, allowFontScaling: false)
+        ..init(ctx.context);
+  screenAdapter.init(ctx.context, designWidth: 375, designHeight: 667);
+}
 
+void _tapScreenPage(Action action, Context<loginState> ctx) {
   if (action.payload["accountNumber"].length == 0) {
     BaseToast("请输入电话号码").tost();
   } else if (action.payload["passWord"].length == 0) {
     BaseToast("请输入密码").tost();
   } else {
-     Navigator.pushNamedAndRemoveUntil(
-               ctx.context, "/screenPage", (routes) => false);
-//    Navigator.push(
-//    ctx.context,
-//    MaterialPageRoute(builder: (context) => PlayerPage().buildPage(null),),
-//  );
-//    HttpUtils.postHttp(
-//      url: Url.BASE_PHONE,
-//      data: {
-//        "phone": action.payload["accountNumber"],
-//        "sn": "8b3fb44d4bc2d5c5d8cd25891ba6e32c"
-//      },
-//      onCallBack: (v) {
-//        if (v.toString().length == 3) {
-//          Navigator.pushNamedAndRemoveUntil(
-//              ctx.context, "/screenPage", (routes) => false);
-//        } else {
-//          BaseToast("登录失败").tost();
-//        }
-//      },
-//    );
+    Navigator.pushNamedAndRemoveUntil(
+        ctx.context, "/screenPage", (routes) => false);
   }
 }
 

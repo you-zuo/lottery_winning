@@ -11,6 +11,7 @@ Reducer<loginState> buildReducer() {
   );
 }
 
+
 loginState _onAction(loginState state, Action action) {
   final loginState newState = state.clone();
   return newState;

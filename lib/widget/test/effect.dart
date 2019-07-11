@@ -3,7 +3,7 @@ import 'package:lottery_winning/home_bean_entity.dart';
 import 'action.dart';
 import 'state.dart';
 import 'package:lottery_winning/export.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Action;
 
 //Effect用来处理来自视图的意图，如点击事件，发起异步请求，这些有副作用的操作（网络请求）。
 
@@ -15,11 +15,9 @@ Effect<testState> buildEffect() {
 }
 
 void _onAction(Action action, Context<testState> ctx) {
-  printUtil.print("effect");
   HttpUtils.getHttp(
     url: "http://h.playdota.cc/api/Topic/get_topic_list",
     onCallBack: (v) {
-      printUtil.print(v);
       List<HomeBeanDataData> data = HomeBeanEntity.fromJson(
         jsonDecode(v),
       ).data.data;

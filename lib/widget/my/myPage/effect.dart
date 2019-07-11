@@ -1,11 +1,10 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'action.dart';
 import 'state.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Action;
 
 Effect<myState> buildEffect() {
   return combineEffects(<Object, Effect<myState>>{
-    myAction.action: _onAction,
     myAction.onSetting: _onSetting,
     myAction.onPersonalData: _onPersonalData,
     myAction.onMsg: _onMsg,
@@ -22,6 +21,6 @@ void _onPersonalData(Action action, Context<myState> ctx) {
   Navigator.pushNamed(ctx.context, '/personalDataPage');
 }
 
-void _onMsg(Action action, Context<myState> ctx){
+void _onMsg(Action action, Context<myState> ctx) {
   Navigator.pushNamed(ctx.context, "/msgPage");
 }
