@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:lottery_winning/export.dart';
 import 'package:lottery_winning/export.dart' as prefix0;
+import 'package:lottery_winning/mode/home_data_entity.dart';
 
 class LoginProviderMode with ChangeNotifier {
   //跳转注册
   void onTapRegister(context) async {
-    // Navigator.pushNamed(context, "/registerPage");
-    // HttpUtils.getHttp(
-    //   url: "http://h.playdota.cc/api/Topic/get_topic_list",
-    //   onCallBack: (v) {
-    //     printUtil.print(v);
-    //   },
-    // );
+     Navigator.pushNamed(context, "/registerPage");
 
-    var result = await HttpUtils.request(
-        'http://www.bilibiliaaaaaa.com',
-        method: HttpUtils.GET);
-        
-    printUtil.print(result);
+//    var result = await HttpUtils.request(
+//        HttpUtils.API_PREFIX + "/api/Topic/get_topic_list",
+//        method: HttpUtils.GET);
+//    List<HomeDataDataData> data = HomeDataEntity.fromJson(result).data.data;
+//    printUtil.print(data[0].nickname);
   }
 
   //登录
