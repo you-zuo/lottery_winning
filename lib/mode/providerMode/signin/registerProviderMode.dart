@@ -22,8 +22,8 @@ class RegisterProviderMode with ChangeNotifier {
     } else if (QQ.length == 0) {
       BaseToast("请输入QQ").tost();
     } else {
-      printUtil
-          .print("name${name} password${passWord} passwords${passWords} phone${phone} email${email} QQ${QQ}");
-          }
-      }
+      printUtil.print(
+          "name${name} password${passWord} passwords${passWords} phone${phone} email${email} QQ${QQ}");
+    }
+  }
 }

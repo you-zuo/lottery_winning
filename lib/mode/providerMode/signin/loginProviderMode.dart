@@ -6,14 +6,14 @@ import 'package:lottery_winning/mode/home_data_entity.dart';
 class LoginProviderMode with ChangeNotifier {
   //跳转注册
   void onTapRegister(context) async {
-    // Navigator.pushNamed(context, "/registerPage");
+    Navigator.pushNamed(context, "/registerPage");
 
-    var result = await HttpUtils.request(
-        HttpUtils.API_PREFIX + "/api/Topic/get_topic_list",
-        method: HttpUtils.GET);
-    if (result != null) {
-      List<HomeDataDataData> data = HomeDataEntity.fromJson(result).data.data;
-    }
+//    var result = await HttpUtils.request(
+//        HttpUtils.API_PREFIX + "/api/Topic/get_topic_list",
+//        method: HttpUtils.GET);
+//    if (result != null) {
+//      List<HomeDataDataData> data = HomeDataEntity.fromJson(result).data.data;
+//    }
   }
 
   //登录
