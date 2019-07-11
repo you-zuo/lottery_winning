@@ -3,6 +3,10 @@ PODS:
     - Flutter
     - Reachability
   - Flutter (1.0.0)
+  - flutter_ijkplayer (0.0.1):
+    - Flutter
+    - FlutterIJK (~> 0.0.9)
+  - FlutterIJK (0.0.9)
   - fluttertoast (0.0.2):
     - Flutter
   - FMDB (2.7.5):
@@ -41,6 +45,7 @@ PODS:
 DEPENDENCIES:
   - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
+  - flutter_ijkplayer (from `.symlinks/plugins/flutter_ijkplayer/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
@@ -51,6 +56,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - FlutterIJK
     - FMDB
     - mob_sharesdk
     - MOBFoundation
@@ -61,6 +67,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/connectivity/ios"
   Flutter:
     :path: ".symlinks/flutter/ios"
+  flutter_ijkplayer:
+    :path: ".symlinks/plugins/flutter_ijkplayer/ios"
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
   image_picker:
@@ -79,6 +87,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   connectivity: c72716e202a1225ec4810740d5cb56b8ae3bf4cc
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  flutter_ijkplayer: c3a5d569dde01d23b33bf0cfc685a256a10e56ce
+  FlutterIJK: 9e3ccb3d74cca7ebe77db65d30a19b630ea8648e
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   image_picker: 16e5fec1fbc87fd3b297c53e4048521eaf17cd06

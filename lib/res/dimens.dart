@@ -36,6 +36,11 @@ class Appstyle {
     fontSize: 12.0,
     color: Colors.white,
   );
+  static const white16 = TextStyle(
+    decoration: TextDecoration.none,
+    fontSize: 16.0,
+    color: Colors.white,
+  );
   static const white21 = TextStyle(
     decoration: TextDecoration.none,
     fontSize: 21.0,
@@ -55,6 +60,11 @@ class Appstyle {
     decoration: TextDecoration.none,
     fontSize: 14.0,
     color: Color(AppColors.BlackGreyColor),
+  );
+  static const white24 = TextStyle(
+    decoration: TextDecoration.none,
+    fontSize: 24.0,
+    color: Colors.white,
   );
 
 }

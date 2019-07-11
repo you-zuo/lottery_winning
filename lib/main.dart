@@ -7,17 +7,15 @@ import 'export.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(primaryColor: Colors.white, primarySwatch: Colors.red),
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          FallbackCupertinoLocalisationsDelegate()
-        ],
-        supportedLocales: S.delegate.supportedLocales,
-        initialRoute: '/',
-        onGenerateRoute: onGenerateRoute),
+    MultiProvider(providers: [
+      ChangeNotifierProvider.value(value: HomeProviderMode()),
+      ChangeNotifierProvider.value(value: HomeDetailsProviderMode()),
+      ChangeNotifierProvider.value(value: PlanProviderMode()),
+      ChangeNotifierProvider.value(value: PlanProviderMode()),
+      ChangeNotifierProvider.value(value: LoginProviderMode()),
+      ChangeNotifierProvider.value(value: RegisterProviderMode()),
+      ChangeNotifierProvider.value(value: MyProviderMode()),
+    ], child: MyApp()),
   );
   if (Platform.isAndroid) {
     // 以下两行 设置android状态栏为透明的沉浸。写在组件渲染之后，是为了在渲染后进行set赋值，覆盖状态栏，写在渲染之前MaterialApp组件会覆盖掉这个值。
@@ -41,4 +39,21 @@ class FallbackCupertinoLocalisationsDelegate
 
   @override
   bool shouldReload(FallbackCupertinoLocalisationsDelegate old) => false;
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(primaryColor: Colors.white, primarySwatch: Colors.red),
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          FallbackCupertinoLocalisationsDelegate()
+        ],
+        supportedLocales: S.delegate.supportedLocales,
+        initialRoute: '/',
+        onGenerateRoute: onGenerateRoute);
+  }
 }
