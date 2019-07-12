@@ -41,6 +41,7 @@ class S implements WidgetsLocalizations {
   String get msg => "消息";
   String get netWork => "Set NetWork";
   String get number => "请输入账号";
+  String get open168 => "168开彩";
   String get passWord => "PassWord:";
   String get password => "请输入密码";
   String get phone => "phone：";
@@ -92,6 +93,8 @@ class $zh_CN extends S {
   String get homeTitle => "彩票大厅";
   @override
   String get netWork => "点击设置网络状态";
+  @override
+  String get open168 => "168开彩";
   @override
   String get email => "邮箱";
   @override

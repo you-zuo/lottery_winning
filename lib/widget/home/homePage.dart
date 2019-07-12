@@ -106,9 +106,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _counter = Provider.of<HomeProviderMode>(context);
+    //tabController初始化配置
     tabController = TabController(
         length: _counter.tabValue.length, vsync: ScrollableState());
-    printUtil.print(_counter.tabValue.length);
     return BaseAppBarNolife(
         S.of(context).homeTitle,
         NestedScrollView(

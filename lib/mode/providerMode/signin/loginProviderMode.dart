@@ -19,7 +19,7 @@ class LoginProviderMode with ChangeNotifier {
   //登录
   void onTapLogin(context, String phone, String passWord) {
     if (phone.length != null && passWord.length != null) {
-      printUtil.print("phone${phone},passWord${passWord}");
+      printUtil.print("phone$phone,passWord$passWord");
       Navigator.pushNamedAndRemoveUntil(
           context, "/screenPage", (routes) => false);
     }

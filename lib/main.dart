@@ -47,15 +47,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: S.of(context).open168,
         theme: ThemeData(primaryColor: Colors.white, primarySwatch: Colors.red),
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,
           FallbackCupertinoLocalisationsDelegate()
         ],
+        //无context路由配置
         navigatorKey: getIt<NavigateService>().key,
         routes: {'/errorPage': (_) => ErrorPage()},
+        //无context路由配置end
         supportedLocales: S.delegate.supportedLocales,
         initialRoute: '/',
         onGenerateRoute: onGenerateRoute);

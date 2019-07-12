@@ -23,7 +23,7 @@ class RegisterProviderMode with ChangeNotifier {
       BaseToast("请输入QQ").tost();
     } else {
       printUtil.print(
-          "name${name} password${passWord} passwords${passWords} phone${phone} email${email} QQ${QQ}");
+          "name$name password$passWord asswords$passWords phone$phone email$email QQ$QQ");
     }
   }
 }
