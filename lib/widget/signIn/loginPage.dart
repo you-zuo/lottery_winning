@@ -38,77 +38,13 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             /*输入用户名*/
-            Container(
-              margin: EdgeInsets.only(left: 23, right: 23, top: 50),
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: Color(AppColors.viewGray),
-                    width: 1,
-                  ),
-                ),
-              ),
-              child: TextField(
-                controller: textEditingController,
-                maxLines: 1,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "请输入用户名",
-                  hintStyle: Appstyle.hitTextStyle,
-                ),
-              ),
-            ),
+            userNameText(),
             /*输入密码*/
-            Container(
-              margin: EdgeInsets.only(left: 23, right: 23),
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: Color(AppColors.viewGray),
-                    width: 1,
-                  ),
-                ),
-              ),
-              child: TextField(
-                controller: textEditingControllers,
-                maxLines: 1,
-                obscureText: true,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "请输入密码",
-                  hintStyle: Appstyle.hitTextStyle,
-                ),
-              ),
-            ),
+            passWordText(),
             /*登录按钮*/
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 23, vertical: 10),
-              child: FlatButton(
-                color: Color(AppColors.loginButton),
-                onPressed: () => _counter.onTapLogin(context,textEditingController.text, textEditingControllers.text),
-                child: Text(
-                  S.of(context).login,
-                  style: Appstyle.witTextStyle,
-                ),
-              ),
-            ),
+            loginButton(_counter, context),
             //点击注册
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                GestureDetector(
-                  onTap: () => _counter.onTapRegister(context),
-                  child: Text(
-                    S.of(context).ClickToRegister,
-                    style: Appstyle.hitTextStyle,
-                  ),
-                ),
-                SizedBox(
-                  width: 23,
-                )
-              ],
-            ),
+            registerButton(_counter, context),
             SizedBox(
               height: 10,
             ),
@@ -139,6 +75,91 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  //点击注册 按钮
+  Row registerButton(LoginProviderMode _counter, BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        GestureDetector(
+          onTap: () => _counter.onTapRegister(context),
+          child: Text(
+            S.of(context).ClickToRegister,
+            style: Appstyle.hitTextStyle,
+          ),
+        ),
+        SizedBox(
+          width: 23,
+        )
+      ],
+    );
+  }
+
+  /*输入密码*/
+  Container passWordText() {
+    return Container(
+      margin: EdgeInsets.only(left: 23, right: 23),
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: Color(AppColors.viewGray),
+            width: 1,
+          ),
+        ),
+      ),
+      child: TextField(
+        controller: textEditingControllers,
+        maxLines: 1,
+        obscureText: true,
+        keyboardType: TextInputType.number,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          hintText: "请输入密码",
+          hintStyle: Appstyle.hitTextStyle,
+        ),
+      ),
+    );
+  }
+
+  /*输入用户名*/
+  Container userNameText() {
+    return Container(
+      margin: EdgeInsets.only(left: 23, right: 23, top: 50),
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: Color(AppColors.viewGray),
+            width: 1,
+          ),
+        ),
+      ),
+      child: TextField(
+        controller: textEditingController,
+        maxLines: 1,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          hintText: "请输入用户名",
+          hintStyle: Appstyle.hitTextStyle,
+        ),
+      ),
+    );
+  }
+
+  //登录按钮
+  Container loginButton(LoginProviderMode _counter, BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 23, vertical: 10),
+      child: FlatButton(
+        color: Color(AppColors.loginButton),
+        onPressed: () => _counter.onTapLogin(
+            context, textEditingController.text, textEditingControllers.text),
+        child: Text(
+          S.of(context).login,
+          style: Appstyle.witTextStyle,
         ),
       ),
     );

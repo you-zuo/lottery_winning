@@ -72,7 +72,7 @@ class CornerLabel {
   }
 
   //右下角角标
-  cornerLabelL(){
+  cornerLabelL() {
     return Stack(
       overflow: Overflow.visible,
       children: <Widget>[

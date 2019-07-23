@@ -7,7 +7,6 @@ import 'package:lottery_winning/utils/newTabs.dart';
 class PlanPage extends StatelessWidget {
   TabController tabController;
 
-
   @override
   Widget build(BuildContext context) {
     final _counter = Provider.of<PlanProviderMode>(context);

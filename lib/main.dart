@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: S.of(context).open168,
+        title: "168开彩",
         theme: ThemeData(primaryColor: Colors.white, primarySwatch: Colors.red),
         localizationsDelegates: const [
           S.delegate,
