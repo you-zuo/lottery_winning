@@ -24,8 +24,7 @@ class LoginProviderMode with ChangeNotifier {
       printUtil.print("phone$phone,passWord$passWord");
       Navigator.pushNamedAndRemoveUntil(
           context, "/screenPage", (routes) => false);
-    } else {
-      Navigator.push(context, MaterialPageRoute(builder: (context) =>WebViewPage()));
     }
+//    Navigator.push(context, MaterialPageRoute(builder: (context) =>WebViewPage()));
   }
 }
