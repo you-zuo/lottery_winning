@@ -57,6 +57,7 @@ class HttpUtils {
           await dio.request(url, data: data, options: Options(method: method));
 
       result = response.data;
+
       /// 打印响应相关信息
       printUtil.print('响应数据：' + response.toString());
     } on DioError catch (e) {
