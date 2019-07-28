@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:lottery_winning/export.dart';
 import 'package:lottery_winning/export.dart' as prefix0;
 import 'package:lottery_winning/mode/home_data_entity.dart';
+import 'package:lottery_winning/widget/webView.dart';
 
 class LoginProviderMode with ChangeNotifier {
+
   //跳转注册
   void onTapRegister(context) async {
     Navigator.pushNamed(context, "/registerPage");
@@ -19,9 +21,10 @@ class LoginProviderMode with ChangeNotifier {
   //登录
   void onTapLogin(context, String phone, String passWord) {
     if (phone.length != null && passWord.length != null) {
-      printUtil.print("phone${phone},passWord${passWord}");
+      printUtil.print("phone$phone,passWord$passWord");
       Navigator.pushNamedAndRemoveUntil(
           context, "/screenPage", (routes) => false);
     }
+//    Navigator.push(context, MaterialPageRoute(builder: (context) =>WebViewPage()));
   }
 }
